@@ -5,12 +5,24 @@ const twitterBtnElement = document.getElementById('twitter');
 const containerElement = document.getElementById('container');
 const quoteTextElement = document.getElementById('quote');
 const authorTextElement = document.getElementById('author');
+const loaderScreenElement = document.getElementById('loader');
 
 // Required Functions
 
+function showLoadingScreen() {
+    /* Show loading screen */
+    loaderScreenElement.hidden = false;
+    containerElement.hidden = true;
+}
+
+function removeLoadingScreen() {
+    /* Show result after completing loading and hide loading screen */
+    loaderScreenElement.hidden = true;
+    containerElement.hidden = false;
+}
+
 function viewDataInHTML(data) {
     /* Manipulate DOM */
-
     // Filter Author data
     if(data.quoteAuthor === '') {
         authorTextElement.innerHTML = 'Unknown';
@@ -26,11 +38,15 @@ function viewDataInHTML(data) {
         quoteTextElement.classList.remove('long-quote-text');
     }
     quoteTextElement.innerHTML = data.quoteText;
+    //
+    removeLoadingScreen();
 }
 
 
 async function getQuote() {
     /* Fetch Quotes from API */
+    // Show loading Screen
+    showLoadingScreen();
     try {
         const proxyURL = 'https://cors-anywhere.herokuapp.com/'
         const URL = 'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
