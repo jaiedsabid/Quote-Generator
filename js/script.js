@@ -6,6 +6,7 @@ const containerElement = document.getElementById('container');
 const quoteTextElement = document.getElementById('quote');
 const authorTextElement = document.getElementById('author');
 const loaderScreenElement = document.getElementById('loader');
+const copyBtnElement = document.getElementById('copy');
 
 // Required Functions
 
@@ -66,11 +67,17 @@ function tweetQuote() {
     window.open(tweetURL, '_blank');
 }
 
+async function copyQuote() {
+    let textContent = `${quoteTextElement.innerText} - ${authorTextElement.innerText}`;
+    await navigator.clipboard.writeText(textContent);
+}
+
 
 // Performing Actions
 
 newQuoteButtonElement.addEventListener('click', getQuote);
 twitterBtnElement.addEventListener('click', tweetQuote);
+copyBtnElement.addEventListener('click', copyQuote);
 
 // Page on load
 getQuote();

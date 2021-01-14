@@ -68,6 +68,17 @@ button:active, button:focus {
     color: rgba(0, 130, 255, 0.8);
 }
 
+#copy {
+    margin-left: 0.4rem;
+    color: rgb(111, 112, 115);
+}
+
+#copy:active {
+    background-color: rgba(111, 112, 115, 0.8);
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 3px 0 0 rgba(0, 0, 0, 0.2);
+}
+
 #new-quote:active {
     background-color: rgba(141, 141, 141, 0.8);
     color: #ffffff;
@@ -128,5 +139,14 @@ button:active, button:focus {
 
     .quote-author {
         font-size: 0.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.3rem 0.8rem;
+        border: 1px grey double;
+        border-radius: 8px;
+        box-shadow: 1px 3px 0 0 #000000;
     }
 }
