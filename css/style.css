@@ -41,7 +41,7 @@ body {
 
 /* For long quotes JavaScript Toggle Class */
 .long-quote-text {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 button {
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: pointer;
     padding: 0.3rem 1.4rem;
     border: 1px grey double;
